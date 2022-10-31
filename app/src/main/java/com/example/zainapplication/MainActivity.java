@@ -46,11 +46,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void signup(View view){
+
+        Intent i_signup = new Intent(this,SignupActivity.class);
+        startActivity(i_signup);
+
         String etEmail = editEmail.getText().toString();
         String etPass = editPassword.getText().toString();
         //saves the email value in the prefrences and commits the file
-        sharedPreferences.edit().putString("email",etEmail).commit();
-        sharedPreferences.edit().putString("pasword",etPass).commit();
+        sharedPreferences.edit().putString("email",etEmail).apply();
+        sharedPreferences.edit().putString("pasword",etPass).apply();
 
     }
+
+
 }
